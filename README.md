@@ -155,3 +155,29 @@ npm list -g | more
 ```
 npm list -g --depth=0 | more
 ```
+
+## Using npm update and npm outdated to update dependencies
+
+**Updating to close-by version with npm update**
+
+Use **npm update** to freshen already installed packages. Let's say we depend on lodash version **^3.9.2**, and we have that version installed under node_modules/lodash.
+
+Then running npm update installs version 3.10.1 under node_modules/lodash but leaves **package.json untouched** (you can change this by passing --save option).
+
+```
+npm update
+```
+
+**Going for bigger update with @latest tag**
+
+Updating a version that is beyond semantic versioning range requires two parts. First, you ask npm to list which packages have newer versions available using **npm outdated**.
+
+```
+npm outdated
+```
+
+Then you ask npm to install the latest version of a package. You can ask for the latest version with the @latest tag. You should also use the **--save** flag to update **package.json**.
+
+```
+npm install lodash@latest --save
+```
