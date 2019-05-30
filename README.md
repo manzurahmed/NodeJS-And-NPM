@@ -181,3 +181,12 @@ Then you ask npm to install the latest version of a package. You can ask for the
 ```
 npm install lodash@latest --save
 ```
+
+## npm uninstall
+
+কোন প্যাকেজ প্রজেক্ট থেকে সরিয়ে দিতে হলে npm uninstall কমান্ড ব্যবহার করতে হয়। প্যাকেজ --save বা --save-dev হিসাবে ইন্সটল করলে আনইন্সটল করার সময় একই সুইচ ব্যবহার করতে হবে।
+
+```
+npm uninstall --save lodash
+npm uninstall --save-dev lodash
+```
