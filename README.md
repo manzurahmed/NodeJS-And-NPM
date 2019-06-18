@@ -213,4 +213,19 @@ This version number indicates that:
 - **9** is minor version
 - **1** is patch version
 - **^** It needs a detailed discussion. After a project reaches it dev life and later taken to table for further development. Among the dependencies, for example, gulp released major version update, like, 4.3.10. But project used gulp version 3.9.1, updating the gulp package through npm, npm will look for package.json file to find gulp version and found "^3.9.1". Because of the presence of caret (^), npm will not update "gulp" to the latest version (4.3.10), rather will will update the last version depending on the "major version" (say, **3.9.9**).
-- **~**
+- **~** Upte to latest version from NodeJS repository.
+- **No character** - No update required. If "npm install" command issued, the package with version number written in package.json will be installed.
+
+## npm view <package_name>
+
+To view all version releases of an NPM package, issue this command:
+
+```
+npm view underscore
+```
+
+If I need to install a specific version of "underscore" package like, 1.4.2, I shall use the following command:
+
+```
+npm i underscore@1.4.2
+```
