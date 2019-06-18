@@ -182,6 +182,14 @@ Then you ask npm to install the latest version of a package. You can ask for the
 npm install lodash@latest --save
 ```
 
+## which npm
+
+To know where on my disk **npm** was installed, type the following command:
+
+```
+which npm
+```
+
 ## npm uninstall
 
 কোন প্যাকেজ প্রজেক্ট থেকে সরিয়ে দিতে হলে npm uninstall কমান্ড ব্যবহার করতে হয়। প্যাকেজ --save বা --save-dev হিসাবে ইন্সটল করলে আনইন্সটল করার সময় একই সুইচ ব্যবহার করতে হবে।
@@ -190,3 +198,19 @@ npm install lodash@latest --save
 npm uninstall --save lodash
 npm uninstall --save-dev lodash
 ```
+## Versioning
+
+Every package bears a version number, like, if I install **gulp version 3.9.1**, for example, package.json keep its records like following:
+
+```
+"devDependencies": {
+	"gulp": "^3.9.1"
+}
+```
+This version number indicates that:
+
+- **3** is major version
+- **9** is minor version
+- **1** is patch version
+- **^** It needs a detailed discussion. After a project reaches it dev life and later taken to table for further development. Among the dependencies, for example, gulp released major version update, like, 4.3.10. But project used gulp version 3.9.1, updating the gulp package through npm, npm will look for package.json file to find gulp version and found "^3.9.1". Because of the presence of caret (^), npm will not update "gulp" to the latest version (4.3.10), rather will will update the last version depending on the "major version" (say, **3.9.9**).
+- **~**
