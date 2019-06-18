@@ -229,3 +229,27 @@ If I need to install a specific version of "underscore" package like, 1.4.2, I s
 ```
 npm i underscore@1.4.2
 ```
+
+# scripts
+
+I can run repeated task in package.json. There is section in package.json called "**scripts**". Support, I have **live-server** installed globally. From my project folder, there is a "public" folder and I want to serve the **index.html** file via live-server. After running live-server, whever I make any change to index.html it will be reloaded with latest changes.
+
+Then I shall issue the following command:
+
+```
+live-server public
+```
+
+I shall define a task definition in "scripts" section like following:
+
+```
+"scripts": {
+    "echo \"Error: no test specified\" && exit 1",
+    "serve": "live-server ./public"
+}
+```
+Now, I shall run my task named "serve" using npm:
+
+```
+npm run serve
+```
